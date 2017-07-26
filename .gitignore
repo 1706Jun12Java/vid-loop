@@ -32,4 +32,4 @@ logs/
 Servers/
 target/
 RemoteSystemsTempFiles/
-/src/main/resources/hibernate.cfg.xml
+hibernate.cfg.xml
