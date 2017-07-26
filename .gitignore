@@ -9,7 +9,7 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-*.DS_Store
+
 # Package Files #
 *.jar
 *.war
@@ -21,20 +21,16 @@
 hs_err_pid*
 
 *.project
-
+.DS_Store/
 .metadata/
-*.metadata
 .settings/
-*.settings
-*.idea/
-*.idea/workspace*
+.idea/
 .recommenders
-*logs/
+logs/
 *.iml
 /bin/
 /Servers/
 target/
-*/target/
 RemoteSystemsTempFiles/
 External Files/
-src/main/resources/hibernate.cfg.xml
+hibernate.cfg.xml
