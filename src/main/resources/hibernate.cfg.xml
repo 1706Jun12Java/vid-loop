@@ -4,9 +4,9 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
-		<property name="hibernate.connection.username">admin</property>
-		<property name="hibernate.connection.password">danieldcl</property>
-		<property name="hibernate.connection.url">jdbc:oracle:thin:@revaturejava.cwv1d5qxxy15.us-east-2.rds.amazonaws.com:1521:ORCL</property>
+		<property name="hibernate.connection.username">${DB_USERNAME}</property>
+		<property name="hibernate.connection.password">${DB_PW}</property>
+		<property name="hibernate.connection.url">${DB_URL}</property>
 		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
 		<!-- this is very noisy in the console -->
