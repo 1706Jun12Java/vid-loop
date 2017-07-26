@@ -34,5 +34,7 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="/Users/Dc/Desktop/workspace/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="/Users/Dc/Desktop/workspace/ojdbc7.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
