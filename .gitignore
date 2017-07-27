@@ -22,6 +22,7 @@ hs_err_pid*
 
 .project
 .DS_Store
+.tern-project
 .metadata/
 .settings/
 .idea/
