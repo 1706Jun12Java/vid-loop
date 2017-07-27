@@ -3,7 +3,7 @@
   <groupId>com.revature</groupId>
   <artifactId>VidLoop</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <properties>
+<properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -38,36 +38,21 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.5.6</version>
 		</dependency>
-    <dependency>
-	    <groupId>javax.servlet</groupId>
-	    <artifactId>javax.servlet-api</artifactId>
-	    <version>3.1.0</version>
-	    <scope>provided</scope>
-	</dependency>
-	<dependency>
+		<dependency>
             <groupId>com.oracle.ojdbc</groupId>
-            <artifactId>ojdbc7</artifactId>
-            <version>12.1.0</version>
+            <artifactId>ojdbc</artifactId>
+            <version>12.1.0.1</version>
         </dependency>
+	    <dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>3.1.0</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>com.amazonaws</groupId>
+		    <artifactId>aws-java-sdk</artifactId>
+		    <version>1.11.106</version>
+		</dependency>
 	</dependencies>
-	<build>
-    <sourceDirectory>src</sourceDirectory>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.5.1</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.0.0</version>
-        <configuration>
-          <warSourceDirectory>WebContent</warSourceDirectory>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>
