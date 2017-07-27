@@ -38,17 +38,22 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.5.6</version>
 		</dependency>
-    <dependency>
-	    <groupId>javax.servlet</groupId>
-	    <artifactId>javax.servlet-api</artifactId>
-	    <version>3.1.0</version>
-	    <scope>provided</scope>
-	</dependency>
-	  <dependency>
-	    <groupId>com.amazonaws</groupId>
-	    <artifactId>aws-java-sdk</artifactId>
-	    <version>1.11.106</version>
-	  </dependency>
+		<dependency>
+            <groupId>com.oracle.ojdbc</groupId>
+            <artifactId>ojdbc</artifactId>
+            <version>12.1.0.1</version>
+        </dependency>
+	    <dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>3.1.0</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>com.amazonaws</groupId>
+		    <artifactId>aws-java-sdk</artifactId>
+		    <version>1.11.106</version>
+		</dependency>
 	</dependencies>
 	<build>
     <sourceDirectory>src</sourceDirectory>
