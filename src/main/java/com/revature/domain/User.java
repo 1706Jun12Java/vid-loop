@@ -1,31 +1,50 @@
 package com.revature.domain;
 
+import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="VL_USER")
-public class User {
+public class User implements Serializable{
+
+	private static final long serialVersionUID = -627439066941063887L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="vl_UserSequence")
-	@SequenceGenerator(allocationSize=1,name="vl_UserSequence",sequenceName="VL_USER_SEQ")
-	@Column(name="VL_ID")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="VL_UserSequence")
+	@SequenceGenerator(allocationSize=1,name="VL_UserSequence",sequenceName="VL_USER_SEQ")
+	@Column(name="U_ID")
 	private int id;
 	
-	@Column(name="VL_USERNAME")
+	@Column(name="U_USERNAME")
 	private String username;
 	
-	@Column(name="VL_PASSWORD")
+	@Column(name="U_PASSWORD")
 	private String password;
 	
-	@Column(name="VL_FIRSTNAME")
+	@Column(name="U_FIRSTNAME")
 	private String firstname;
 	
 	@Column(name="VL_LASTNAME")
 	private String lastname;
 	
-	@Column(name="VL_EMAIL")
+	@Column(name="U_EMAIL")
 	private String email;
+	
+	@OneToMany(mappedBy="v_userId")
+	private List<Video> vid;
+
+	@OneToMany(mappedBy="c_user")
+	private List<Comment> comment;
+	
+	public List<Video> getVid() {
+		return vid;
+	}
+
+	public List<Comment> getComment() {
+		return comment;
+	}
 
 	public int getId() {
 		return id;
