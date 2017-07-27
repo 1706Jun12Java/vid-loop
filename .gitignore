@@ -21,7 +21,7 @@
 hs_err_pid*
 
 .project
-.DS_Store/
+.DS_Store
 .metadata/
 .settings/
 .idea/
