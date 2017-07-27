@@ -19,7 +19,7 @@ public class Driver {
 		//System.out.println(vd.getVideosByName("name"));
 		//System.out.println(vd.getVideosByUser(2));
 		
-		//init();
+		init();
 	}
 	static void init(){
 		Session s = ConnectionUtil.getSession();
