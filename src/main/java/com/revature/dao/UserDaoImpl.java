@@ -17,4 +17,12 @@ public class UserDaoImpl implements UserDao {
 		session.close();
 	}
 
+	@Override
+	public User getUserById(int id) {
+		Session session = ConnectionUtil.getSession();
+		User user = (User) session.get(User.class, id);
+	    session.close();
+	      return user;
+	}
+
 }
