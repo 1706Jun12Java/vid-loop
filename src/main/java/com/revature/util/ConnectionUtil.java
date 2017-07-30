@@ -14,9 +14,9 @@ import org.hibernate.service.ServiceRegistry;
 public class ConnectionUtil {
 
 	private static SessionFactory sessionFactory(String filename) {
-    	
+
 		Configuration c = new Configuration();
-		
+
 		ClassLoader classLoader = null;
 		InputStream input = null;
 		try {
@@ -31,7 +31,7 @@ public class ConnectionUtil {
 			c.setProperty("hibernate.connection.url", prop.getProperty("DB_URL"))
 			 .setProperty("hibernate.connection.username", prop.getProperty("DB_USERNAME"))
 			 .setProperty("hibernate.connection.password", prop.getProperty("DB_PASSWORD"))
-		     .configure(filename); 
+		     .configure(filename);
 
 		} catch (IOException ex) {
 			ex.printStackTrace();
@@ -44,7 +44,7 @@ public class ConnectionUtil {
 				}
 			}
 		}
- 
+
    		ServiceRegistry sr = new StandardServiceRegistryBuilder().applySettings(c.getProperties()).build();
         return c.buildSessionFactory(sr);
     }
