@@ -33,4 +33,5 @@ logs/
 Servers/
 target/
 RemoteSystemsTempFiles/
-*.cfg.xml
+env.properties
+log.txt
