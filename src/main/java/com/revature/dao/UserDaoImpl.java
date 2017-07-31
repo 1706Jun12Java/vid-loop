@@ -20,7 +20,7 @@ public class UserDaoImpl implements UserDao {
 		tx.commit();
 		log.info("persist user "+ user.toString());
 		session.close();
-		
+
 	}
 
 	@Override
