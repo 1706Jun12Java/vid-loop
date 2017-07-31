@@ -35,3 +35,5 @@ target/
 RemoteSystemsTempFiles/
 env.properties
 log.txt
+beans.xml
+servlet-context.xml

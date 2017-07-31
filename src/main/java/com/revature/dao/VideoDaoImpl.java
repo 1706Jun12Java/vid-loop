@@ -6,10 +6,10 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import com.revature.domain.Video;
 import com.revature.util.ConnectionUtil;
-
 
 public class VideoDaoImpl implements VideoDao {
 
@@ -47,8 +47,8 @@ public class VideoDaoImpl implements VideoDao {
 		session.close();
 		return results;
 	}
-	
 
 
-	
+
+
 }

@@ -26,7 +26,7 @@ public class Driver {
 		Transaction tx = s.beginTransaction();
 
 		User user1 = new User("user1","pass","user","user","user@gmail.com");
-		User user2 = new User("user2","pass","user2","user2","user2@gmail.com");
+		User user2 = new User("userx","pass","userx","userx","userx@gmail.com");
 
 		Video vid1 = new Video(user2,"no","name",1,1,"spooky");
 		Video vid2 = new Video(user2,"yes","nammmmme",1,1,"spooky");
