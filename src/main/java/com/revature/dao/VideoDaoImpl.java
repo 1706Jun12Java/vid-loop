@@ -14,7 +14,7 @@ import com.revature.util.ConnectionUtil;
 public class VideoDaoImpl implements VideoDao {
 
 	@Override
-	public Video getVideosById(int id) {
+	public Video getVideoById(int id) {
 		Session session = ConnectionUtil.getSession();
 		Video vid = (Video) session.get(Video.class, id);
 	    session.close();
@@ -46,6 +46,11 @@ public class VideoDaoImpl implements VideoDao {
 		List<Video> results = (List<Video>) cr.list();
 		session.close();
 		return results;
+	}
+	@Override
+	public void saveVideo(Video v, int id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

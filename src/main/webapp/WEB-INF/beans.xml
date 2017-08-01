@@ -14,7 +14,7 @@
 	
 	<mvc:resources mapping="/static/**" location="/static/" />
 	<!-- set up front controller's view resolver -->
-	<!-- <bean
+	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
 			<value>/WEB-INF/views/</value>
@@ -23,7 +23,6 @@
 			<value>.jsp</value>
 		</property>
 	</bean>
-	 -->
 	<!-- jsps are just very convenient for this example. you'll be using other 
 		rendering techniques. -->
 </beans>
