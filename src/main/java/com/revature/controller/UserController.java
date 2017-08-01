@@ -11,6 +11,6 @@ public class UserController {
 
 	@RequestMapping(value="/addInfo",method=RequestMethod.GET)
 	public String getPersonInfo(Model m){
-		return "user";
+		return "static/user.html";
 	}
 }
