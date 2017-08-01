@@ -12,7 +12,8 @@
 	<!-- enable mvc annotations -->
 	<mvc:annotation-driven />
 	
-	<mvc:resources mapping="/static/**" location="/static/" />
+	<!-- <mvc:resources mapping="/resources/**" location="/resources/" /> -->
+	
 	<!-- set up front controller's view resolver -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -23,6 +24,7 @@
 			<value>.jsp</value>
 		</property>
 	</bean>
-	<!-- jsps are just very convenient for this example. you'll be using other 
-		rendering techniques. -->
+		
+	<mvc:resources mapping="/css/**" location="/css/" />
+    <mvc:resources mapping="/js/**" location="/js/"  />
 </beans>

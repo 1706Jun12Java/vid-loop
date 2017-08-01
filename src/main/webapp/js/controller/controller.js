@@ -6,7 +6,7 @@ angular.module('myApp').controller('VideoController', ['$scope', 'VideoService',
     self.videos=[];
  
     self.submit = submit;
-    self.edit = edit;
+//    self.edit = edit;
     self.remove = remove;
     self.reset = reset;
     $scope.message = "asdf";

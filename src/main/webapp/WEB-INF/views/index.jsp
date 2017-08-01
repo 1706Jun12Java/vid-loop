@@ -12,14 +12,13 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
-<link href="quiz.css" rel="stylesheet">
 <title>VidLoop</title>
 </head>
 <body ng-controller="VideoController">
 <p>Hello world</p>
 <h1>{{message}}</h1>
-<script src="/static/js/app.js'"></script>
-<script src="/static/js/service/video_service.js"></script>
-<script src="/static/js/controller/controller.js"></script>
+<script src="js/app.js"></script>
+<script src="js/service/video_service.js"></script>
+<script src="js/controller/controller.js"></script>
 </body>
 </html>
