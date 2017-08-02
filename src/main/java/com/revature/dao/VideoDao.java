@@ -11,4 +11,5 @@ public interface VideoDao {
 	public List<Video> getVideosByName(String name);
 	public List<Video> getVideosByUser(int id);
 	public void saveVideo(Video v, int id);
+	public List<Video> getAllVideos();
 }

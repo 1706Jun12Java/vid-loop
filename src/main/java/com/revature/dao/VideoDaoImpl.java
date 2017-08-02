@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -13,6 +14,13 @@ import com.revature.util.ConnectionUtil;
 
 public class VideoDaoImpl implements VideoDao {
 
+	@Override
+	public List<Video> getAllVideos() {
+		List<Video> vid = new ArrayList<Video>();
+		Session s = ConnectionUtil.getSession();
+		vid = s.createQuery("from Video").list();
+		  return vid;
+	}
 	@Override
 	public Video getVideoById(int id) {
 		Session session = ConnectionUtil.getSession();
