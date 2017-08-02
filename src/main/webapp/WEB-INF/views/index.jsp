@@ -12,13 +12,19 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"
+	type="text/javascript"></script>
 <title>VidLoop</title>
 </head>
 <body ng-controller="VideoController">
 <p>Hello world</p>
 <h1>{{message}}</h1>
+<a class="btn btn-primary btn-md" href="#/">home</a>
+	<a class="btn btn-primary btn-md" href="#/video">video</a>
+	<a class="btn btn-primary btn-md" href="#/profile">profile</a>
 <script src="js/app.js"></script>
 <script src="js/service/video_service.js"></script>
-<script src="js/controller/controller.js"></script>
+<script src="js/controller/VideoController.js"></script>
 </body>
 </html>
