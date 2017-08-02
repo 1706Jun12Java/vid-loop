@@ -2,13 +2,8 @@
  
 angular.module('myApp').controller('VideoController', ['$scope', 'VideoService', function($scope, VideoService) {
     var self = this;
-    self.video={id:null,username:'',address:'',email:''};
     self.videos=[];
- 
     self.submit = submit;
-//    self.edit = edit;
-    self.remove = remove;
-    self.reset = reset;
     $scope.message = "asdf";
  
     fetchAllVideos();
@@ -56,18 +51,4 @@ angular.module('myApp').controller('VideoController', ['$scope', 'VideoService',
 //        reset();
     }
 
- 
-    function remove(id){
-//        console.log('id to be deleted', id);
-//        if(self.user.id === id) {//clean form if the user to be deleted is shown there.
-//            reset();
-//        }
-//        deleteUser(id);
-    }
- 
- 
-    function reset(){
-        $scope.myForm.$setPristine(); //reset Form
-    }
- 
 }]);

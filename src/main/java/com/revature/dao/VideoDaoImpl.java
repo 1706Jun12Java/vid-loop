@@ -3,16 +3,21 @@ package com.revature.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
+import com.amazonaws.services.s3.AmazonS3;
 import com.revature.domain.Video;
 import com.revature.util.ConnectionUtil;
 
 public class VideoDaoImpl implements VideoDao {
+	
+	private static Logger log = Logger.getRootLogger();
 
 	@Override
 	public List<Video> getAllVideos() {
@@ -26,6 +31,7 @@ public class VideoDaoImpl implements VideoDao {
 		Session session = ConnectionUtil.getSession();
 		Video vid = (Video) session.get(Video.class, id);
 	    session.close();
+	    log.info("get video with id "+ id);
 	      return vid;
 	}
 	@Override
@@ -35,6 +41,7 @@ public class VideoDaoImpl implements VideoDao {
 		cr.add(Restrictions.eq("tag", tag));
 		List<Video> results = cr.list();
 	    session.close();
+	    log.info("get videos by tag "+tag);
 	      return results ;
 	}
 	@Override
@@ -44,6 +51,7 @@ public class VideoDaoImpl implements VideoDao {
 		cr.add(Restrictions.like("vidName", name,MatchMode.ANYWHERE));
 		List<Video> results = cr.list();
 		session.close();
+		log.info("get videos by name " + name);
 		return results;
 	}
 	@Override
@@ -53,12 +61,21 @@ public class VideoDaoImpl implements VideoDao {
 		cr.add(Restrictions.eq("v_userId.id", id));
 		List<Video> results = (List<Video>) cr.list();
 		session.close();
+		log.info("get videos by user id "+id);
 		return results;
 	}
 	@Override
 	public void saveVideo(Video v, int id) {
-		// TODO Auto-generated method stub
-		
+		log.info("save video "+v.toString()+" from "+id);
+	}
+	@Override
+	public List<Video> listVideos() {
+		Session session = ConnectionUtil.getSession();
+		Criteria cr = session.createCriteria(Video.class);
+		List<Video> results = (List<Video>) cr.list();
+		session.close();
+		log.info("list videos");
+		return results;
 	}
 
 
