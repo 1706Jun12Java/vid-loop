@@ -16,6 +16,9 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
+import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.PutObjectResult;
 import com.revature.dao.*;
 import com.revature.domain.User;
 import com.revature.domain.Video;
@@ -55,7 +58,7 @@ public class Driver {
 	}
 	
 	static void s3(){
-		final String bucket = "famtubestorage";
+		final String bucket = "famtubestorage/vids";
 		Date d = new Date();
 		String filename=d.getTime()+".mp4";
 		
@@ -65,7 +68,7 @@ public class Driver {
         	System.out.println(filename);
         	System.out.println(s3.listBuckets().toString());
         	File file = new File("/Users/Dc/Desktop/test.mp4");
-        	Object x = s3.putObject(bucket, filename, file);
+        	PutObjectResult x = s3.putObject(new PutObjectRequest(bucket, filename, file).withCannedAcl(CannedAccessControlList.PublicRead));
         	System.out.println(x);
         } catch (AmazonServiceException e) {
         	e.printStackTrace();
