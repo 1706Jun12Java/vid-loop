@@ -35,7 +35,7 @@ public class Driver {
 		//System.out.println(vd.getVideosByName("name"));
 		//System.out.println(vd.getVideosByUser(2));
 
-//		init();
+		//init();
 		s3();
 	}
 	static void init(){
@@ -56,20 +56,20 @@ public class Driver {
 		tx.commit();
 		s.close();
 	}
-	
+
 	static void s3(){
 		final String bucket = "famtubestorage/vids";
 		Date d = new Date();
 		String filename=d.getTime()+".mp4";
-		
-		
+
+
         try {
         	AmazonS3 s3 = AmazonS3ClientBuilder.defaultClient();
         	System.out.println(filename);
         	System.out.println(s3.listBuckets().toString());
-        	File file = new File("/Users/Dc/Desktop/test.mp4");
+        	File file = new File("C:/Users/Christian/Desktop/test");
         	PutObjectResult x = s3.putObject(new PutObjectRequest(bucket, filename, file).withCannedAcl(CannedAccessControlList.PublicRead));
-        	System.out.println(x);
+        	System.out.println(x.getETag());
         } catch (AmazonServiceException e) {
         	e.printStackTrace();
         } catch(AmazonClientException e){

@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -17,7 +18,7 @@ import com.revature.util.ConnectionUtil;
 
 @Component("videoDaoImpl")
 public class VideoDaoImpl implements VideoDao {
-	
+
 	private static Logger log = Logger.getRootLogger();
 
 	@Override

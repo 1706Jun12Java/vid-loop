@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 @Entity
 @Table(name="VL_COMMENTS")
-@Component(value="Comment")
 public class Comment implements Serializable{
 
 	private static final long serialVersionUID = -1405359540644474225L;

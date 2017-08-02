@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 @Entity
 @Table(name="VL_Videos")
-@Component(value="Video")
 public class Video implements Serializable {
 
 	private static final long serialVersionUID = 6766627278874071216L;
