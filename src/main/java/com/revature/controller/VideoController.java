@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/")
-public class MainController {
+@RequestMapping("/video")
+public class VideoController {
 
-	@RequestMapping(method=RequestMethod.GET)
-	public String getIndex(Model m){
-		return "index";
+	@RequestMapping(value="/addVideo",method=RequestMethod.GET)
+	public String getPersonInfo(Model m){
+		return "static/user.html";
 	}
 }

@@ -5,8 +5,11 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.springframework.stereotype.Component;
+
 @Entity
 @Table(name="VL_USER")
+@Component(value="User")
 public class User implements Serializable{
 
 	private static final long serialVersionUID = -627439066941063887L;
