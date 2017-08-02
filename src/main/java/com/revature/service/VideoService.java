@@ -2,13 +2,17 @@ package com.revature.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.revature.dao.VideoDaoImpl;
 import com.revature.domain.Video;
 
-public interface VideoService {
-	public List<Video> listVideos();
-	public Video getVideoById(int id);
-	public List<Video> getVideosByTag(String tag);
-	public List<Video> getVideosByName(String name);
-	public List<Video> getVideosByUser(int id);
-	public void saveVideo(Video v, int id);
+public class VideoService {
+	
+	@Autowired
+	VideoDaoImpl VD;
+	
+	public List<Video> getVideos(){
+		return VD.listVideos();
+	}
 }

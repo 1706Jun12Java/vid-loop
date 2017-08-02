@@ -7,6 +7,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
@@ -14,6 +15,7 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.revature.domain.Video;
 import com.revature.util.ConnectionUtil;
 
+@Component("videoDaoImpl")
 public class VideoDaoImpl implements VideoDao {
 	
 	private static Logger log = Logger.getRootLogger();
