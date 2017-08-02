@@ -34,13 +34,9 @@ public class Driver {
 		//System.out.println(vd.getVideosByTag("spooky"));
 		//System.out.println(vd.getVideosByName("name"));
 		//System.out.println(vd.getVideosByUser(2));
-
-<<<<<<< HEAD
+		
 		//init();
-=======
-//		init();
 		s3();
->>>>>>> origin/dc
 	}
 	static void init(){
 		Session s = ConnectionUtil.getSession();
@@ -71,7 +67,7 @@ public class Driver {
         	AmazonS3 s3 = AmazonS3ClientBuilder.defaultClient();
         	System.out.println(filename);
         	System.out.println(s3.listBuckets().toString());
-        	File file = new File("/Users/Dc/Desktop/test.mp4");
+        	File file = new File("C:/Users/Christian/Desktop/test");
         	PutObjectResult x = s3.putObject(new PutObjectRequest(bucket, filename, file).withCannedAcl(CannedAccessControlList.PublicRead));
         	System.out.println(x);
         } catch (AmazonServiceException e) {
