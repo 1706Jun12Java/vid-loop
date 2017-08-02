@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+	
+	@RequestMapping(value="/")
+	public String userIndex(Model m){
+		return "static/user.html";
+	}
 
-	@RequestMapping(value="/addInfo",method=RequestMethod.GET)
+	@RequestMapping(value="/get",method=RequestMethod.GET)
 	public String getPersonInfo(Model m){
 		return "static/user.html";
 	}

@@ -1,8 +1,21 @@
 package com.revature.main;
 
+import java.io.File;
+import java.sql.Timestamp;
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.EnvironmentVariableCredentialsProvider;
+import com.amazonaws.regions.Regions;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.revature.dao.*;
 import com.revature.domain.User;
 import com.revature.domain.Video;
@@ -19,7 +32,8 @@ public class Driver {
 		//System.out.println(vd.getVideosByName("name"));
 		//System.out.println(vd.getVideosByUser(2));
 
-		init();
+//		init();
+		s3();
 	}
 	static void init(){
 		Session s = ConnectionUtil.getSession();
@@ -38,5 +52,26 @@ public class Driver {
 
 		tx.commit();
 		s.close();
+	}
+	
+	static void s3(){
+		final String bucket = "famtubestorage";
+		Date d = new Date();
+		String filename=d.getTime()+".mp4";
+		
+		
+        try {
+        	AmazonS3 s3 = AmazonS3ClientBuilder.defaultClient();
+        	System.out.println(filename);
+        	System.out.println(s3.listBuckets().toString());
+        	File file = new File("/Users/Dc/Desktop/test.mp4");
+        	Object x = s3.putObject(bucket, filename, file);
+        	System.out.println(x);
+        } catch (AmazonServiceException e) {
+        	e.printStackTrace();
+        } catch(AmazonClientException e){
+        	e.printStackTrace();
+        }
+        System.out.println("Done!");
 	}
 }
