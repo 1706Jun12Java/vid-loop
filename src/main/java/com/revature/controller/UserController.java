@@ -1,21 +1,18 @@
 package com.revature.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import com.revature.domain.User;
 
 @RestController
-@RequestMapping("/user")
 public class UserController {
 	
-	@RequestMapping(value="/")
-	public String userIndex(Model m){
-		return "static/user.html";
-	}
-
-	@RequestMapping(value="/get",method=RequestMethod.GET)
-	public String getPersonInfo(Model m){
-		return "static/user.html";
-	}
 }
+	

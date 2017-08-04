@@ -1,0 +1,93 @@
+2017-08-04 16:16:58 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-08-04 16:16:58 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2017-08-04 16:16:58 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-08-04 16:16:58 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-08-04 16:16:58 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate.cfg.xml
+2017-08-04 16:16:58 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate.cfg.xml
+2017-08-04 16:16:58 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2017-08-04 16:16:58 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-04 16:16:58 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@revaturejava.cwv1d5qxxy15.us-east-2.rds.amazonaws.com:1521:ORCL]
+2017-08-04 16:16:58 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=admin, password=****}
+2017-08-04 16:16:58 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2017-08-04 16:16:58 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-04 16:16:59 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2017-08-04 16:16:59 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-08-04 16:16:59 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-08-04 16:17:00 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2017-08-04 16:17:00 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2017-08-04 16:17:02 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2017-08-04 16:17:20 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.VL_COMMENTS
+2017-08-04 16:17:20 INFO  TableMetadata:66 - HHH000037: Columns: [vid, c_user_id, c_vid_id, c_user, c_id, c_comment]
+2017-08-04 16:17:20 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_gslimk9mctlualuxpbwf3fxj6, fk_ccnrc83mecya1h05ak51o5sq9]
+2017-08-04 16:17:20 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c005852]
+2017-08-04 16:17:21 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.VL_USER
+2017-08-04 16:17:21 INFO  TableMetadata:66 - HHH000037: Columns: [vl_lastname, u_firstname, u_id, v_lastname, u_email, u_password, u_username, u_lastname]
+2017-08-04 16:17:21 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2017-08-04 16:17:21 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c005854]
+2017-08-04 16:17:38 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.VL_VIDEOS
+2017-08-04 16:17:38 INFO  TableMetadata:66 - HHH000037: Columns: [v_id, v_user_id, v_loops, v_vidname, v_link, v_userid, v_likes, v_tags]
+2017-08-04 16:17:38 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_raeiy9hpi8djn16e1pssxnwb1]
+2017-08-04 16:17:38 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c005856]
+2017-08-04 16:17:38 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2017-08-04 16:19:28 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-08-04 16:19:28 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2017-08-04 16:19:28 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-08-04 16:19:28 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-08-04 16:19:28 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate.cfg.xml
+2017-08-04 16:19:28 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate.cfg.xml
+2017-08-04 16:19:28 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2017-08-04 16:19:28 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-04 16:19:28 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@revaturejava.cwv1d5qxxy15.us-east-2.rds.amazonaws.com:1521:ORCL]
+2017-08-04 16:19:28 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=admin, password=****}
+2017-08-04 16:19:28 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2017-08-04 16:19:28 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-04 16:19:29 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2017-08-04 16:19:30 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-08-04 16:19:30 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-08-04 16:19:30 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2017-08-04 16:19:30 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2017-08-04 16:19:31 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2017-08-04 16:19:31 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.VL_COMMENTS
+2017-08-04 16:19:31 INFO  TableMetadata:66 - HHH000037: Columns: [vid, c_user_id, c_vid_id, c_user, c_id, c_comment]
+2017-08-04 16:19:31 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_gslimk9mctlualuxpbwf3fxj6, fk_ccnrc83mecya1h05ak51o5sq9]
+2017-08-04 16:19:31 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c005852]
+2017-08-04 16:19:32 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.VL_USER
+2017-08-04 16:19:32 INFO  TableMetadata:66 - HHH000037: Columns: [vl_lastname, u_firstname, u_id, v_lastname, u_email, u_password, u_username, u_lastname]
+2017-08-04 16:19:32 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2017-08-04 16:19:32 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c005854]
+2017-08-04 16:19:33 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.VL_VIDEOS
+2017-08-04 16:19:33 INFO  TableMetadata:66 - HHH000037: Columns: [v_id, v_user_id, v_loops, v_vidname, v_link, v_userid, v_likes, v_tags]
+2017-08-04 16:19:33 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_raeiy9hpi8djn16e1pssxnwb1]
+2017-08-04 16:19:33 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c005856]
+2017-08-04 16:19:33 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2017-08-04 16:19:44 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-08-04 16:19:44 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2017-08-04 16:19:44 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-08-04 16:19:44 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-08-04 16:19:44 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate.cfg.xml
+2017-08-04 16:19:44 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate.cfg.xml
+2017-08-04 16:19:44 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2017-08-04 16:19:44 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-04 16:19:44 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@revaturejava.cwv1d5qxxy15.us-east-2.rds.amazonaws.com:1521:ORCL]
+2017-08-04 16:19:44 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=admin, password=****}
+2017-08-04 16:19:44 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2017-08-04 16:19:44 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-04 16:19:45 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2017-08-04 16:19:45 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-08-04 16:19:45 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-08-04 16:19:45 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2017-08-04 16:19:45 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2017-08-04 16:19:47 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2017-08-04 16:19:47 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.VL_COMMENTS
+2017-08-04 16:19:47 INFO  TableMetadata:66 - HHH000037: Columns: [vid, c_user_id, c_vid_id, c_user, c_id, c_comment]
+2017-08-04 16:19:47 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_gslimk9mctlualuxpbwf3fxj6, fk_ccnrc83mecya1h05ak51o5sq9]
+2017-08-04 16:19:47 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c005852]
+2017-08-04 16:19:48 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.VL_USER
+2017-08-04 16:19:48 INFO  TableMetadata:66 - HHH000037: Columns: [vl_lastname, u_firstname, u_id, v_lastname, u_email, u_password, u_username, u_lastname]
+2017-08-04 16:19:48 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2017-08-04 16:19:48 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c005854]
+2017-08-04 16:19:48 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.VL_VIDEOS
+2017-08-04 16:19:48 INFO  TableMetadata:66 - HHH000037: Columns: [v_id, v_user_id, v_loops, v_vidname, v_link, v_userid, v_likes, v_tags]
+2017-08-04 16:19:48 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_raeiy9hpi8djn16e1pssxnwb1]
+2017-08-04 16:19:48 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c005856]
+2017-08-04 16:19:48 INFO  SchemaUpdate:267 - HHH000232: Schema update complete

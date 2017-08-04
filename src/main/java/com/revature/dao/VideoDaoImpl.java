@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.s3.AmazonS3;
+import com.revature.domain.User;
 import com.revature.domain.Video;
 import com.revature.util.ConnectionUtil;
 
@@ -65,12 +66,13 @@ public class VideoDaoImpl implements VideoDao {
 	}
 	@Override
 	public List<Video> listVideos() {
-		Session session = ConnectionUtil.getSession();
-		Criteria cr = session.createCriteria(Video.class);
-		List<Video> results = (List<Video>) cr.list();
-		session.close();
-		log.info("list videos");
-		return results;
+		List<Video> videos = new ArrayList<Video>();
+		Session s = ConnectionUtil.getSession();
+		videos = s.createQuery("from Video").list();
+		s.close();
+		System.out.println(videos);
+		log.info("get all videos ");
+		return videos;
 	}
 
 

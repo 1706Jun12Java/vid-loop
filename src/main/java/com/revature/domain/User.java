@@ -7,6 +7,8 @@ import javax.persistence.*;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="VL_USER")
 public class User implements Serializable{
@@ -34,9 +36,11 @@ public class User implements Serializable{
 	@Column(name="U_EMAIL")
 	private String email;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="v_userId")
 	private List<Video> vid;
 
+	@JsonIgnore
 	@OneToMany(mappedBy="c_user")
 	private List<Comment> comment;
 	

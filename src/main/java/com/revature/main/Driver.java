@@ -2,8 +2,11 @@ package com.revature.main;
 
 import java.io.File;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -36,7 +39,8 @@ public class Driver {
 		//System.out.println(vd.getVideosByUser(2));
 
 		//init();
-		s3();
+//		s3();
+		getVideos();
 	}
 	static void init(){
 		Session s = ConnectionUtil.getSession();
@@ -77,4 +81,13 @@ public class Driver {
         }
         System.out.println("Done!");
 	}
+	
+	static void getVideos(){
+		List<Video> videos = new ArrayList<Video>();
+		Session s = ConnectionUtil.getSession();
+		videos = s.createQuery("from Video").list();
+		s.close();
+		System.out.println(videos);
+	}
+	
 }

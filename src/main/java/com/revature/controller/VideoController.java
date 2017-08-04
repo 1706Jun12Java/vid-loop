@@ -20,4 +20,6 @@ public class VideoController {
 	public @ResponseBody List<Video> getPersonInfo(){
 		return VS.getVideos();
 	}
+	
+	
 }
