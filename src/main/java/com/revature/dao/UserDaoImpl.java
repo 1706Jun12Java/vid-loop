@@ -4,10 +4,12 @@ import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Component;
 
 import com.revature.domain.User;
 import com.revature.util.ConnectionUtil;
 
+@Component("userDaoImpl")
 public class UserDaoImpl implements UserDao {
 
 	private static Logger log = Logger.getRootLogger();

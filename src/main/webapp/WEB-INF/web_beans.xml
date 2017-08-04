@@ -27,5 +27,7 @@
     <mvc:resources mapping="/js/**" location="/js/"  />
     <mvc:resources mapping="/pages/**" location="/pages/" />
     <bean name="videoService" class="com.revature.service.VideoService"></bean>
+    <bean name="userService" class="com.revature.service.UserService"></bean>
+    <bean name="commentService" class="com.revature.service.CommentService"></bean>
     
 </beans>
