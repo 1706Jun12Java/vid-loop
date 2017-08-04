@@ -15,4 +15,8 @@ public class VideoService {
 	public List<Video> getVideos(){
 		return VD.listVideos();
 	}
+	
+	public Video getVideoById(int id){
+		return VD.getVideoById(id);
+	}
 }

@@ -3,8 +3,7 @@
 angular.module('myApp').controller('VideoController', ['$scope', 'VideoService', function($scope, VideoService) {
     var self = this;
     self.videos=[];
-    self.submit = submit;
-    $scope.message = "asdf";
+    $scope.message = "Greetings from VidLoop";
  
     fetchAllVideos();
  
@@ -13,6 +12,7 @@ angular.module('myApp').controller('VideoController', ['$scope', 'VideoService',
             .then(
             function(d) {
                 self.videos = d;
+                console.log(d);
             },
             function(errResponse){
                 console.error('Error while fetching Videos');
@@ -30,25 +30,6 @@ angular.module('myApp').controller('VideoController', ['$scope', 'VideoService',
         );
     }
 
-    function deleteVideo(id){
-    	VideoService.deleteVideo(id)
-            .then(
-            fetchAllVideos,
-            function(errResponse){
-                console.error('Error while deleting Video');
-            }
-        );
-    }
- 
-    function submit() {
-//        if(self.user.id===null){
-//            console.log('Saving New Video', self.video);
-//            createUser(self.user);
-//        }else{
-//            updateUser(self.user, self.user.id);
-//            console.log('User updated with id ', self.user.id);
-//        }
-//        reset();
-    }
+  
 
 }]);

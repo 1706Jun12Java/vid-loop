@@ -18,7 +18,6 @@
 <title>VidLoop</title>
 </head>
 <body ng-controller="VideoController">
-<p>Hello world</p>
 <h1>{{message}}</h1>
 <a class="btn btn-primary btn-md" href="#/">home</a>
 	<a class="btn btn-primary btn-md" href="#/video">video</a>
