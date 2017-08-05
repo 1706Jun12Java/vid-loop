@@ -8,6 +8,7 @@
 		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
 		<!-- this is very noisy in the console -->
 		<property name = "hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
 		<!-- creates database if "create", keeps existing structure and value if "update" or not -->
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<!-- map domain object classes -->

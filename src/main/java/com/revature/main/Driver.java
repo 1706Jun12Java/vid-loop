@@ -33,9 +33,9 @@ public class Driver {
 	public static void main(String[] args) {
 		
 
-		init();
+//		init();
 //		s3();
-//		getVideos();
+		getVideos();
 	}
 	static void init(){
 		Session s = ConnectionUtil.getSession();

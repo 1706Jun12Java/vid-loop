@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -21,8 +20,8 @@ public class Video implements Serializable {
 	@Column(name="V_ID")
 	private int id;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="V_USER")
+	@ManyToOne
+	@JoinColumn(name="V_USER", referencedColumnName="U_ID")
 	private User user;
 	
 	@Column(name="V_LINK")
@@ -42,12 +41,11 @@ public class Video implements Serializable {
 	
 	@OneToMany(mappedBy="vid", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private List<Comment> comments;
-	
 
+	@JsonIgnore
 	public User getUser() {
 		return user;
 	}
-
 
 	public void setUser(User user) {
 		this.user = user;
@@ -126,10 +124,13 @@ public class Video implements Serializable {
 		super();
 	}
 
+
 	@Override
 	public String toString() {
-		return "Video [id=" + id + ", user=" + user.getFirstname() + ", link=" + link + ", vidName=" + vidName + ", likes="
-				+ likes + ", loopCount=" + loopCount + ", tag=" + tag + ", comments=" + comments + "]";
+		return "Video [id=" + id + ", user=" + user + ", link=" + link + ", vidName=" + vidName + ", likes=" + likes
+				+ ", loopCount=" + loopCount + ", tag=" + tag + ", comments=" + comments + "]";
 	}
+
+	
 
 }
