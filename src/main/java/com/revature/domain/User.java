@@ -30,26 +30,23 @@ public class User implements Serializable{
 	@Column(name="U_FIRSTNAME")
 	private String firstname;
 	
-	@Column(name="VL_LASTNAME")
+	@Column(name="U_LASTNAME")
 	private String lastname;
 	
 	@Column(name="U_EMAIL")
 	private String email;
 	
-	@JsonIgnore
-	@OneToMany(mappedBy="v_userId")
-	private List<Video> vid;
+	@JsonIgnore 
+	@OneToMany(mappedBy="user", fetch=FetchType.EAGER)
+	private List<Video> videos;
 
-	@JsonIgnore
-	@OneToMany(mappedBy="c_user")
-	private List<Comment> comment;
 	
-	public List<Video> getVid() {
-		return vid;
+	public List<Video> getVideos() {
+		return videos;
 	}
 
-	public List<Comment> getComment() {
-		return comment;
+	public void setVideos(List<Video> videos) {
+		this.videos = videos;
 	}
 
 	public int getId() {
@@ -115,7 +112,7 @@ public class User implements Serializable{
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", firstname=" + firstname
+		return "User [id=" + id + ", username=" + username +  ", firstname=" + firstname
 				+ ", lastname=" + lastname + ", email=" + email + "]";
 	}
 	

@@ -26,7 +26,7 @@ public class CommentDaoImpl implements CommentDao {
 		Video vid = vd.getVideoById(vId);
 		comment.setVid(vid);
 		User user = ud.getUserById(uId);
-		comment.setC_user(user);
+		comment.setUser(user);
 
 		session.save(comment);
 		tx.commit();

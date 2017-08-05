@@ -6,6 +6,8 @@ import javax.persistence.*;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="VL_COMMENTS")
 public class Comment implements Serializable{
@@ -18,11 +20,11 @@ public class Comment implements Serializable{
 	@Column(name="C_ID")
 	private int id;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="C_USER_ID")
-	private User c_user;
+	private User user;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="C_VID_ID")
 	private Video vid;
 	
@@ -36,15 +38,17 @@ public class Comment implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public User getC_user() {
-		return c_user;
+	
+	@JsonIgnore 
+	public User getUser() {
+		return user;
 	}
 
-	public void setC_user(User c_user) {
-		this.c_user = c_user;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
+	@JsonIgnore 
 	public Video getVid() {
 		return vid;
 	}
@@ -63,7 +67,7 @@ public class Comment implements Serializable{
 
 	public Comment(User user, Video vid, String comment) {
 		super();
-		this.c_user = user;
+		this.user = user;
 		this.vid = vid;
 		this.comment = comment;
 	}
@@ -74,7 +78,7 @@ public class Comment implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Comment [id=" + id + ", user=" + c_user + ", vid=" + vid + ", comment=" + comment + "]";
+		return "Comment [id=" + id + ", user=" + user.getFirstname() + ", vid=" + vid.getId() + ", comment=" + comment + "]";
 	}
 	
 	

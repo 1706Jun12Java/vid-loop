@@ -1,0 +1,30 @@
+2017-08-05 16:33:12 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-08-05 16:33:12 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2017-08-05 16:33:12 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-08-05 16:33:12 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-08-05 16:33:12 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate.cfg.xml
+2017-08-05 16:33:12 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate.cfg.xml
+2017-08-05 16:33:13 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2017-08-05 16:33:13 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-05 16:33:13 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@revaturejava.cwv1d5qxxy15.us-east-2.rds.amazonaws.com:1521:ORCL]
+2017-08-05 16:33:13 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=admin, password=****}
+2017-08-05 16:33:13 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2017-08-05 16:33:13 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-05 16:33:14 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2017-08-05 16:33:41 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-08-05 16:33:41 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2017-08-05 16:33:41 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-08-05 16:33:41 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-08-05 16:33:41 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate.cfg.xml
+2017-08-05 16:33:41 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate.cfg.xml
+2017-08-05 16:33:41 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2017-08-05 16:33:41 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-05 16:33:41 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@revaturejava.cwv1d5qxxy15.us-east-2.rds.amazonaws.com:1521:ORCL]
+2017-08-05 16:33:41 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=admin, password=****}
+2017-08-05 16:33:41 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2017-08-05 16:33:41 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-05 16:33:42 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2017-08-05 16:33:42 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-08-05 16:33:42 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-08-05 16:33:43 INFO  SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+2017-08-05 16:33:44 INFO  SchemaExport:406 - HHH000230: Schema export complete
