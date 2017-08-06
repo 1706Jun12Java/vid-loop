@@ -1,6 +1,9 @@
 package com.revature.dao;
 
+import java.io.File;
+import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -14,9 +17,16 @@ import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
+import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.PutObjectResult;
 import com.revature.domain.User;
 import com.revature.domain.Video;
 import com.revature.util.ConnectionUtil;
@@ -65,8 +75,26 @@ public class VideoDaoImpl implements VideoDao {
 		return results;
 	}
 	@Override
-	public void saveVideo(Video v, int id) {
-		log.info("save video "+v.toString()+" from "+id);
+	public void saveVideo(File file, int id) {
+		final String bucket = "famtubestorage/vids";
+		Date d = new Date();
+		String fileExtension = getFileExtension(file);
+		String filename=d.getTime()+"."+fileExtension;
+
+
+        try {
+        	AmazonS3 s3 = AmazonS3ClientBuilder.defaultClient();
+        	System.out.println(filename);
+        	System.out.println(s3.listBuckets().toString());
+        	PutObjectResult x = s3.putObject(new PutObjectRequest(bucket, filename, file).withCannedAcl(CannedAccessControlList.PublicRead));
+        	System.out.println(x.getETag());
+        } catch (AmazonServiceException e) {
+        	e.printStackTrace();
+        } catch(AmazonClientException e){
+        	e.printStackTrace();
+        }
+        System.out.println("Done!");
+		log.info("save video "+file.getName());
 	}
 	@Override
 	public List<Video> listVideos() {
@@ -80,6 +108,12 @@ public class VideoDaoImpl implements VideoDao {
 	}
 
 
+	static String getFileExtension(File file) {
+        String fileName = file.getName();
+        if(fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
+        return fileName.substring(fileName.lastIndexOf(".")+1);
+        else return "";
+    }
 
 
 }

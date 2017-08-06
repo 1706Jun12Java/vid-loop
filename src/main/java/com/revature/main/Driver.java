@@ -9,6 +9,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -35,7 +36,9 @@ public class Driver {
 
 //		init();
 //		s3();
-		getVideos();
+//		getVideos();
+		getFileExtension();
+		
 	}
 	static void init(){
 		Session s = ConnectionUtil.getSession();
@@ -90,5 +93,12 @@ public class Driver {
 		VideoDao vd = new VideoDaoImpl();
 		System.out.println(vd.listVideos());
 	}
+	
+	static void getFileExtension() {
+		File file = new File("C:/Users/Christian/Desktop/test.mp4");
+        String fileName = file.getName();
+        if(fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
+        System.out.println(fileName.substring(fileName.lastIndexOf(".")+1));
+    }
 	
 }
