@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.persistence.*;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="VL_Videos")
 public class Video implements Serializable {
@@ -17,9 +20,9 @@ public class Video implements Serializable {
 	@Column(name="V_ID")
 	private int id;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="V_USER_ID")
-	private User v_userId;
+	@ManyToOne
+	@JoinColumn(name="V_USER", referencedColumnName="U_ID")
+	private User user;
 	
 	@Column(name="V_LINK")
 	private String link;
@@ -36,12 +39,28 @@ public class Video implements Serializable {
 	@Column(name="V_TAGS")
 	private String tag;
 	
-	@OneToMany(mappedBy="vid")
-	private List<Comment> v_comment;
-	
-	public List<Comment> getV_comment() {
-		return v_comment;
+	@OneToMany(mappedBy="vid", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	private List<Comment> comments;
+
+	@JsonIgnore
+	public User getUser() {
+		return user;
 	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
 
 	public int getId() {
 		return id;
@@ -49,14 +68,6 @@ public class Video implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public User getV_userId() {
-		return v_userId;
-	}
-
-	public void setV_userId(User v_user) {
-		this.v_userId = v_user;
 	}
 
 	public String getLink() {
@@ -101,22 +112,25 @@ public class Video implements Serializable {
 
 	public Video(User user, String link, String vidName, int likes, int loopCount, String tag) {
 		super();
-		this.v_userId = user;
+		this.user = user;
 		this.link = link;
 		this.vidName = vidName;
 		this.likes = likes;
 		this.loopCount = loopCount;
 		this.tag = tag;
 	}
-
+	
 	public Video() {
 		super();
 	}
 
+
 	@Override
 	public String toString() {
-		return "Video [id=" + id + ", user=" + v_userId + ", link=" + link + ", vidName=" + vidName + ", likes=" + likes
-				+ ", loopCount=" + loopCount + ", tag=" + tag + "]";
+		return "Video [id=" + id + ", user=" + user + ", link=" + link + ", vidName=" + vidName + ", likes=" + likes
+				+ ", loopCount=" + loopCount + ", tag=" + tag + ", comments=" + comments + "]";
 	}
+
 	
+
 }
