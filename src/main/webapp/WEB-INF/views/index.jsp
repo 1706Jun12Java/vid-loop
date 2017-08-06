@@ -44,8 +44,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/VidLoop">Home</a></li>
-		<li><a href="#">Upload</a></li>
+        <li class="active"><a href="#/">Home</a></li>
+		<li><a href="#/Upload">Upload</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <div class="btn-ground text-center">
@@ -214,6 +214,8 @@
 <script src="js/app.js"></script>
 <script src="js/service/video_service.js"></script>
 <script src="js/controller/VideoController.js"></script>
+<script src="js/controller/UploadController.js"></script>
+<script src="js/controller/ProfileController.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
@@ -13,12 +14,14 @@ import java.util.*;
 
 @Component("commentDaoImpl")
 public class CommentDaoImpl implements CommentDao {
+	@Autowired
+	ConnectionUtil cu;
 	
 	@Override
 	public Comment addComment(String str, int vId, int uId) {
 		UserDao ud = new UserDaoImpl();
 		VideoDao vd = new VideoDaoImpl();
-		Session session = ConnectionUtil.getSession();
+		Session session = cu.getSession();
 		Transaction tx = session.beginTransaction();
 
 		Comment comment = new Comment();
@@ -36,7 +39,7 @@ public class CommentDaoImpl implements CommentDao {
 
 	@Override
 	public List<Comment> getCommentsByVideo(int id) {
-		Session session = ConnectionUtil.getSession();
+		Session session = cu.getSession();
 		Criteria cr = session.createCriteria(Comment.class);
 		cr.add(Restrictions.eq("vid.id", id));
 		List<Comment> results = (List<Comment>) cr.list();

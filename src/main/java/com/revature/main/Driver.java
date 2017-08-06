@@ -37,11 +37,12 @@ public class Driver {
 //		init();
 //		s3();
 //		getVideos();
-		getFileExtension();
+//		getFileExtension();
 		
 	}
 	static void init(){
-		Session s = ConnectionUtil.getSession();
+		ConnectionUtil cu = new ConnectionUtil();
+		Session s = cu.getSession();
 		Transaction tx = s.beginTransaction();
 
 		User user1 = new User("user1","pass","user","user","user@gmail.com");

@@ -1,5 +1,5 @@
 'use strict';
-angular.module('myApp').controller('VideoController', ['$scope', 'VideoService', function($scope, VideoService) {
+angular.module('myApp').controller('UploadController', ['$scope', 'VideoService', function($scope, VideoService) {
 	
 	
 

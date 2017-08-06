@@ -16,6 +16,7 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,11 +37,13 @@ import com.revature.util.ConnectionUtil;
 @Component("videoDaoImpl")
 public class VideoDaoImpl implements VideoDao {
 
+	@Autowired
+	ConnectionUtil cu;
 	private static Logger log = Logger.getRootLogger();
 
 	@Override
 	public Video getVideoById(int id) {
-		Session session = ConnectionUtil.getSession();
+		Session session = cu.getSession();
 		Video vid = (Video) session.get(Video.class, id);
 	    session.close();
 	    log.info("get video with id "+ id);
@@ -48,7 +51,7 @@ public class VideoDaoImpl implements VideoDao {
 	}
 	@Override
 	public List<Video> getVideosByTag(String tag) {
-		Session session = ConnectionUtil.getSession();
+		Session session = cu.getSession();
 		Criteria cr = session.createCriteria(Video.class);
 		cr.add(Restrictions.eq("tag", tag));
 		List<Video> results = cr.list();
@@ -58,7 +61,7 @@ public class VideoDaoImpl implements VideoDao {
 	}
 	@Override
 	public List<Video> getVideosByName(String name) {
-		Session session = ConnectionUtil.getSession();
+		Session session = cu.getSession();
 		Criteria cr = session.createCriteria(Video.class);
 		cr.add(Restrictions.like("vidName", name,MatchMode.ANYWHERE));
 		List<Video> results = cr.list();
@@ -68,7 +71,7 @@ public class VideoDaoImpl implements VideoDao {
 	}
 	@Override
 	public List<Video> getVideosByUser(int id) {
-		Session session = ConnectionUtil.getSession();
+		Session session = cu.getSession();
 		Criteria cr = session.createCriteria(Video.class);
 		cr.add(Restrictions.eq("v_userId.id", id));
 		List<Video> results = (List<Video>) cr.list();
@@ -99,7 +102,7 @@ public class VideoDaoImpl implements VideoDao {
     		User user = ud.getUserById(id);
     		Video v = new Video(user, link, vidName, 0,0,tag);
     		System.out.println(v.toString());
-    		Session s = ConnectionUtil.getSession();
+    		Session s = cu.getSession();
     		Transaction tx = s.beginTransaction();
     		s.save(v);
     		tx.commit();
@@ -118,7 +121,7 @@ public class VideoDaoImpl implements VideoDao {
 	@Override
 	public List<Video> listVideos() {
 		List<Video> videos = new ArrayList<Video>();
-		Session s = ConnectionUtil.getSession();
+		Session s = cu.getSession();
 		videos = s.createQuery("from Video").list();
 		s.close();
 		System.out.println(videos);
@@ -137,7 +140,7 @@ public class VideoDaoImpl implements VideoDao {
 	@Override
 	@Transactional
 	public void incrementCount(int id) {
-		Session s = ConnectionUtil.getSession();
+		Session s = cu.getSession();
 		Query q = s.createQuery("update Video set loopCount=loopCount+1 where id=:id");
 		q.setInteger("id", id);
 		q.executeUpdate();

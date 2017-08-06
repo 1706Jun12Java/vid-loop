@@ -1,5 +1,5 @@
 'use strict';
-var App = angular.module('myApp',['ngRoute']);
+var app = angular.module('myApp',['ngRoute']);
 
 
 app.config(function($routeProvider) {
@@ -8,10 +8,13 @@ app.config(function($routeProvider) {
         templateUrl : "index.jsp"
     })
     .when("/upload", {
-        templateUrl : "upload.jsp"
+        templateUrl : "upload.jsp",
+        controller: "UploadController"
     })
     .when("/profile", {
-        templateUrl : "profile.jsp" 
+        templateUrl : "profile.jsp" ,
+        controller: "ProfileController"
      })
+     .otherwise({redirectTo: '/'});
 });
 
