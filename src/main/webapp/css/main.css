@@ -44,9 +44,11 @@ width: 100%;
 #rightrow{
 float: right;
 overflow: scroll;
+max-height: 800px;
 }
 #leftrow {
 overflow: scroll;
+max-height: 800px;
 }
 h4 {
 color: white;
