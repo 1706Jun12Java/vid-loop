@@ -9,7 +9,6 @@ app.config(function($routeProvider) {
     })
     .when("/upload", {
         templateUrl : "static/views/uploadpage.html",
-//    	template: "<div>upload page</div>",
         controller: "UploadController"
     })
     .when("/profile", {

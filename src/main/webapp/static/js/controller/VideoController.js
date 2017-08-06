@@ -7,7 +7,7 @@ angular.module('myApp').controller('VideoController', ['$scope', 'VideoService',
 	$scope.videosRight=[];
 	
  
-//    fetchAllVideos();
+    fetchAllVideos();
  
     function fetchAllVideos(){
         VideoService.fetchAllVideos()
