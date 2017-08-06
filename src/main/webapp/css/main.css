@@ -4,6 +4,8 @@ body{
 	background-repeat: no-repeat;
 	background-size: cover;
     background-attachment: fixed;
+	padding-right:0px !important;
+	margin-right:0px !important;
 }
 .w3-sidebar {
 	background-color: white;
@@ -30,7 +32,7 @@ margin-bottom: 20px;
 margin-top: -6px;
 background-color: #efebe7;
 color: black;
-padding-bottom: 50px;
+padding-bottom: 1px;
 }
 #move{
 	position: relative;
@@ -159,10 +161,8 @@ border: 1px solid #231c1b;
 
 .login-help{
   font-size: 12px;
-}	
-.modal-open[style] {
-    padding-right: 0px !important;
 }
+
 #topsections {
 background-color: #19100e;
 color: #b6a59b;

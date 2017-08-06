@@ -1,7 +1,7 @@
 'use strict';
 angular.module('myApp').factory('VideoService', ['$http', '$q', function($http, $q){
 	 
-    var REST_SERVICE_URI = 'http://localhost:8080/VidLoop/video/all';
+    var REST_SERVICE_URI = 'http://ec2-54-210-86-227.compute-1.amazonaws.com:8080/vid-loop/video/all';
  
     var factory = {
         fetchAllVideos: fetchAllVideos,
@@ -15,11 +15,11 @@ angular.module('myApp').factory('VideoService', ['$http', '$q', function($http, 
         $http.get(REST_SERVICE_URI)
             .then(
             function (response) {
-                deferred.resolve(response.data);
+            	deferred.resolve(response.data);
             },
             function(errResponse){
                 console.error('Error while fetching Videos');
-                deferred.reject(errResponse);
+                console.error(errResponse);
             }
         );
         return deferred.promise;

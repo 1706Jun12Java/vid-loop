@@ -3,6 +3,13 @@ var vid = document.getElementsByTagName("video");
     item.addEventListener('mouseover', hoverVideo, false);
     item.addEventListener('mouseout', hideVideo, false);
 });
+function hoverVideo(e) {   
+    this.play();
+}
+function hideVideo(e) {
+    this.pause();
+}
+
 
 function decideNav() {
 var style = document.getElementById("mySidebar").style.display;
@@ -20,11 +27,4 @@ function openNav() {
 }
 function closeNav() {
   document.getElementById("mySidebar").style.display = "none";
-}
-function hoverVideo(e) {   
-console.log(e.target);
-    this.play();
-}
-function hideVideo(e) {
-    this.pause();
 }

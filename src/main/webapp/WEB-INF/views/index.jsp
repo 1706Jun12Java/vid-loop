@@ -19,7 +19,8 @@
 
 <title>VidLoop</title>
 </head>
-<body ng-controller="VideoController">
+<body>
+
 <!-- side nav bar -->
 <div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left" style="display:none" id="mySidebar">
   <h3 class="sideTitles w3-bar-item w3-border-bottom" >Categories</h3>
@@ -139,39 +140,20 @@
 <div class="col-sm-2 text-left" id="leftrow"> 
 
 
-<div class="vid" >
-  <video  width=100% id="vid1">
-    <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4" />
+<div class="vid" ng-repeat="video in videos">
+  <video  width=100% id="vid1" ng-src= " {{ video.link }} " type="video/mp4" onmouseover="play()" onmouseleave="pause()" >
     Your browser does not support HTML5 video.
   </video>
   <div class="title">
-  <h4>Title</h4>
+  <h4>{{ video.vidName }} </h4>
   </div>
   <div class="info">
-  <h5>User info or description</h5>
+  <h5>Posted by: {{ video.v_userId.username }}</h5>
+  <br>
+  <h6> Likes: {{ video.likes }}  Loops: {{ video.loopCount }} </h6>
   </div>
 
-  <video  width=100%>
-    <source src="https://giant.gfycat.com/VerifiableTerrificHind.mp4" type="video/mp4" />
-    Your browser does not support HTML5 video.
-  </video>
-  <div class="title">
-  <h4>Title</h4>
-  </div>
-  <div class="info">
-  <h5>User info or description</h5>
-  </div>
-
-  <video  width=100%>
-    <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4" />
-    Your browser does not support HTML5 video.
-  </video>
-  <div class="title">
-  <h4>Title</h4>
-  </div>
-  <div class="info">
-  <h5>User info or description</h5>
-  </div>
+  
   </div>
 </div>
 	  
@@ -198,46 +180,27 @@
 
 	  
 	  <!-- Third row -->
- <div class="col-sm-2 text-left" id="rightrow"> 
- 
-<div class="w3-white" >
-<div class="vid">
-  <video  width=100%>
-    <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4" />
+<div class="col-sm-2 text-left" id="leftrow"> 
+
+
+<div class="vid" ng-repeat="video in videos">
+  <video  width=100% id="vid1" ng-src= " {{ video.link }} " type="video/mp4" onmouseover="play()" onmouseleave="pause()" >
     Your browser does not support HTML5 video.
   </video>
   <div class="title">
-  <h4>Title</h4>
+  <h4>{{ video.vidName }} </h4>
   </div>
   <div class="info">
-  <h5>User info or description</h5>
+  <h5>Posted by: {{ video.v_userId.username }}</h5>
+  <br>
+  <h6> Likes: {{ video.likes }}  Loops: {{ video.loopCount }} </h6>
   </div>
-  
-  <video  width=100%>
-    <source src="https://giant.gfycat.com/VerifiableTerrificHind.mp4" type="video/mp4" />
-    Your browser does not support HTML5 video.
-  </video>
-  <div class="title">
-  <h4>Title</h4>
-  </div>
-  <div class="info">
-  <h5>User info or description</h5>
-  </div>
-  
-  <video  width=100%>
-    <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4" />
-    Your browser does not support HTML5 video.
-  </video>
-  <div class="title">
-  <h4>Title</h4>
-  </div>
-  <div class="info">
-  <h5>User info or description</h5>
+
   
   </div>
 </div>
-</div>
-</div>
+
+
 </div>
 </div>
 	
