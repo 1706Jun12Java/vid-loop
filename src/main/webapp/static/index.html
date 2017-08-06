@@ -15,7 +15,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"
 	type="text/javascript"></script>
-<link href="css/main.css" rel="stylesheet" />
+<link href="static/css/main.css" rel="stylesheet" />
 
 <title>VidLoop</title>
 </head>
@@ -44,8 +44,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#/">Home</a></li>
-		<li><a href="#/Upload">Upload</a></li>
+        <li class="active"><a href="/!">Home</a></li>
+		<li><a href="#!upload">Upload</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <div class="btn-ground text-center">
@@ -118,104 +118,18 @@
 </div>
 
     
+<div class="ng-view"></div>
 
-<!-- videos -->
-
-<div id="move">
-<div class="w3-container" id="topsections">
-
-<div class="middlerow col-sm-2 text-center w3-round" > 
-<h3>Popular Videos</h3>
-</div>
-
-<div class="middlerow col-sm-8 text-center" > 
-<h2>Top Video of The Day</h2>
-</div>
-
-<div class="middlerow col-sm-2 text-center" > 
-<h3>Recent Videos</h3>
-</div>
-
-</div>
-
-<!-- First row -->
-<div class="w3-container" ng-controller="VideoController">
-<div class="col-sm-2 text-left" id="leftrow"> 
-
-
-<div class="vid" ng-repeat="video in videos">
-  <video  width=100% id="vid1" ng-src= " {{ video.link }} " type="video/mp4" onmouseover="play()" onmouseleave="pause()" >
-    Your browser does not support HTML5 video.
-  </video>
-  <div class="title">
-  <h4>{{ video.vidName }} </h4>
-  </div>
-  <div class="info">
-  <h5>Posted by: {{ video.v_userId.username }}</h5>
-  <br>
-  <h6> Likes: {{ video.likes }}  Loops: {{ video.loopCount }} </h6>
-  </div>
-
-  
-  </div>
-</div>
-	  
-	  
-<!-- Second row-->
-
-<div class="middlerow col-sm-8 text-left" >
-<div class="w3-white" >
-<div class="vidm" >
-  <video  width=100% class="vidr" >
-    <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4" />
-    Your browser does not support HTML5 video.
-  </video>
-  <div class="title">
-  <h4>Title</h4>
-  </div>
-  <div class="info">
-  <h5>User info or description</h5>
-  </div>
-  </div>
-  </div>
-  
-  </div>
-
-	  
-	  <!-- Third row -->
-<div class="col-sm-2 text-left" id="leftrow"> 
-
-
-<div class="vid" ng-repeat="video in videos">
-  <video  width=100% id="vid1" ng-src= " {{ video.link }} " type="video/mp4" onmouseover="play()" onmouseleave="pause()" >
-    Your browser does not support HTML5 video.
-  </video>
-  <div class="title">
-  <h4>{{ video.vidName }} </h4>
-  </div>
-  <div class="info">
-  <h5>Posted by: {{ video.v_userId.username }}</h5>
-  <br>
-  <h6> Likes: {{ video.likes }}  Loops: {{ video.loopCount }} </h6>
-  </div>
-
-  
-  </div>
-</div>
-
-
-</div>
-</div>
 	
 	
 <footer id="footer">
 <h5>VidLoop inc.</h5>
 </footer>
-<script src="js/app.js"></script>
-<script src="js/service/video_service.js"></script>
-<script src="js/controller/VideoController.js"></script>
-<script src="js/controller/UploadController.js"></script>
-<script src="js/controller/ProfileController.js"></script>
-<script src="js/main.js"></script>
+<script src="static/js/app.js"></script>
+<script src="static/js/service/video_service.js"></script>
+<script src="static/js/controller/VideoController.js"></script>
+<script src="static/js/controller/UploadController.js"></script>
+<script src="static/js/controller/ProfileController.js"></script>
+<script src="static/js/main.js"></script>
 </body>
 </html>

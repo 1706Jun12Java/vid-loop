@@ -1,18 +1,19 @@
-'use strict';
 var app = angular.module('myApp',['ngRoute']);
 
 
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "index.jsp"
+        templateUrl : "static/views/videos.html",
+        controller: "VideoController"
     })
     .when("/upload", {
-        templateUrl : "upload.jsp",
+        templateUrl : "static/views/uploadpage.html",
+//    	template: "<div>upload page</div>",
         controller: "UploadController"
     })
     .when("/profile", {
-        templateUrl : "profile.jsp" ,
+        templateUrl : "static/views/profile.html" ,
         controller: "ProfileController"
      })
      .otherwise({redirectTo: '/'});

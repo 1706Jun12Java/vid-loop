@@ -9,17 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MainController {
 
 	@RequestMapping(value="/", method=RequestMethod.GET)
-	public String getIndex(Model m){
-		return "index";
+	public String getIndex(){
+		return "static/index.html";
 	}
 	
-	@RequestMapping(value="/profile",method=RequestMethod.GET)
-	public String getProfile(Model m){
-		return "profile";
-	}
-	
-	@RequestMapping(value="/upload",method=RequestMethod.GET)
-	public String getUpload(Model m){
-		return "uploadPage";
-	}
 }

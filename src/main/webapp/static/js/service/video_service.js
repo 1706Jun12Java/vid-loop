@@ -5,7 +5,7 @@ angular.module('myApp').factory('VideoService', ['$http', '$q', function($http, 
  
     var factory = {
         fetchAllVideos: fetchAllVideos,
-        saveVideo: saveVideo,
+        saveVideo: saveVideo
     };
  
     return factory;
