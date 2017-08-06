@@ -37,14 +37,18 @@ public class VideoController {
 	}
 	
 	@RequestMapping(value="/add",method=RequestMethod.POST)
-	public @ResponseBody String addVideo(@RequestParam("file") File file, @RequestParam("userID") int id){
+	public ResponseEntity<Video> addVideo(@RequestParam("file") File file, @RequestParam("userID") int id, @RequestParam("vidName") String vidName, @RequestParam("tag") String tag){
 		System.out.println("adding video ");
 		if (!file.isFile()) {
-			VS.saveVideo(file, id);
-			return "ok";
+			return ResponseEntity.ok(VS.saveVideo(file, id, vidName, tag));
 		}else {
-			return "empty file";
+			return null;
 		}
 		
+	}
+	@RequestMapping(value="/count", method=RequestMethod.POST)
+	public @ResponseBody String incrementCount(@RequestParam("id") int id) {
+		VS.incrementCount(id);
+		return "ok";
 	}
 }

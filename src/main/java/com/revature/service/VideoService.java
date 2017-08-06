@@ -22,7 +22,11 @@ public class VideoService {
 		return VD.getVideoById(id);
 	}
 	
-	public void saveVideo(File file, int id) {
-		VD.saveVideo(file, id);
+	public Video saveVideo(File file, int id, String vidName, String tag) {
+		return VD.saveVideo(file, id, vidName, tag);
+	}
+	
+	public void incrementCount(int id) {
+		VD.incrementCount(id);
 	}
 }

@@ -44,7 +44,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="frontdesign.html">Home</a></li>
+        <li class="active"><a href="/VidLoop">Home</a></li>
 		<li><a href="#">Upload</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -118,21 +118,24 @@
 </div>
 
     
-</header>
 
 <!-- videos -->
 
 <div id="move">
 <div class="w3-container" id="topsections">
-<div class="middlerow col-sm-2 text-center w3-round"" > 
+
+<div class="middlerow col-sm-2 text-center w3-round" > 
 <h3>Popular Videos</h3>
 </div>
+
 <div class="middlerow col-sm-8 text-center" > 
 <h2>Top Video of The Day</h2>
 </div>
+
 <div class="middlerow col-sm-2 text-center" > 
 <h3>Recent Videos</h3>
 </div>
+
 </div>
 
 <!-- First row -->

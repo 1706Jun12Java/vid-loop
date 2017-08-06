@@ -12,5 +12,6 @@ public interface VideoDao {
 	public List<Video> getVideosByTag(String tag);
 	public List<Video> getVideosByName(String name);
 	public List<Video> getVideosByUser(int id);
-	public void saveVideo(File file, int id);
+	public Video saveVideo(File file, int id, String vidName, String tag);
+	public void incrementCount(int id);
 }

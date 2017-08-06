@@ -119,7 +119,7 @@ public class Video implements Serializable {
 		this.loopCount = loopCount;
 		this.tag = tag;
 	}
-
+	
 	public Video() {
 		super();
 	}

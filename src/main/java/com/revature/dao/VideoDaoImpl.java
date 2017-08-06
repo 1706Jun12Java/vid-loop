@@ -11,12 +11,14 @@ import org.hibernate.Criteria;
 import org.hibernate.FetchMode;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.amazonaws.AmazonClientException;
@@ -74,27 +76,44 @@ public class VideoDaoImpl implements VideoDao {
 		log.info("get videos by user id "+id);
 		return results;
 	}
+	
 	@Override
-	public void saveVideo(File file, int id) {
+	@Transactional
+	public Video saveVideo(File file, int id, String vidName, String tag) {
+		//TODO not done
 		final String bucket = "famtubestorage/vids";
 		Date d = new Date();
 		String fileExtension = getFileExtension(file);
 		String filename=d.getTime()+"."+fileExtension;
-
-
+		String link = "https://s3.amazonaws.com/famtubestorage/vids/"+filename;
+		
         try {
         	AmazonS3 s3 = AmazonS3ClientBuilder.defaultClient();
         	System.out.println(filename);
         	System.out.println(s3.listBuckets().toString());
         	PutObjectResult x = s3.putObject(new PutObjectRequest(bucket, filename, file).withCannedAcl(CannedAccessControlList.PublicRead));
         	System.out.println(x.getETag());
+        	System.out.println("Done!");
+    		log.info("save video "+file.getName());
+    		UserDao ud = new UserDaoImpl();
+    		User user = ud.getUserById(id);
+    		Video v = new Video(user, link, vidName, 0,0,tag);
+    		System.out.println(v.toString());
+    		Session s = ConnectionUtil.getSession();
+    		Transaction tx = s.beginTransaction();
+    		s.save(v);
+    		tx.commit();
+    		s.close();
+    		return v;
+    		
         } catch (AmazonServiceException e) {
         	e.printStackTrace();
         } catch(AmazonClientException e){
         	e.printStackTrace();
         }
-        System.out.println("Done!");
-		log.info("save video "+file.getName());
+        
+        return null;
+        
 	}
 	@Override
 	public List<Video> listVideos() {
@@ -114,6 +133,16 @@ public class VideoDaoImpl implements VideoDao {
         return fileName.substring(fileName.lastIndexOf(".")+1);
         else return "";
     }
+	
+	@Override
+	@Transactional
+	public void incrementCount(int id) {
+		Session s = ConnectionUtil.getSession();
+		Query q = s.createQuery("update Video set loopCount=loopCount+1 where id=:id");
+		q.setInteger("id", id);
+		q.executeUpdate();
+		s.close();
+	}
 
 
 }
