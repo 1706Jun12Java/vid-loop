@@ -23,7 +23,7 @@
 <div class="col-sm-2 text-left" id="leftrow"> 
 
 
-<div class="vid" ng-repeat="video in videosRight">
+<div class="vid" ng-repeat="video in videosLeft">
   <video  width=100% id="vid1" ng-src= " {{ video.link }} " type="video/mp4" onmouseover="play()" onmouseleave="pause()" >
     Your browser does not support HTML5 video.
   </video>
@@ -66,7 +66,7 @@
 <div class="col-sm-2 text-left" id="leftrow"> 
 
 
-<div class="vid" ng-repeat="video in videosLeft">
+<div class="vid" ng-repeat="video in videosRight">
   <video  width=100% id="vid1" ng-src= " {{ video.link }} " type="video/mp4" onmouseover="play()" onmouseleave="pause()" >
     Your browser does not support HTML5 video.
   </video>

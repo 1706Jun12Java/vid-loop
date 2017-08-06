@@ -198,3 +198,7 @@ margin-bottom: 10px;
     height: 505px;   
     background-color: #dad1cc;
 }
+#logoutbutton {
+    margin-top: 5px;
+    padding-top: 10px;
+}

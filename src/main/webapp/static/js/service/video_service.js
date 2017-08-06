@@ -39,5 +39,6 @@ angular.module('myApp').factory('VideoService', ['$http', '$q', function($http, 
         );
         return deferred.promise;
     }
+    
  
 }]);
