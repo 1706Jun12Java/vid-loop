@@ -6,4 +6,5 @@ public interface UserDao {
 
 	public void persistUser(User user);
 	public User loginUser(String username, String password);
+	public User getUserById(int id);
 }

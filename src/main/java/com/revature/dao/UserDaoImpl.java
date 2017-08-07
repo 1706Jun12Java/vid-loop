@@ -37,6 +37,17 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	
+	@Override
+	public User loginUser(String username, String password) {
+		Session s = cu.getSession();
+		Query q = s.createQuery("select id, username from User where username=:username and password=:password");
+		q.setString("username", username);
+		q.setString("password", password);
+		User user = (User) q.list();
+		return user;
+	}
+	
+	@Override
 	public User getUserById(int id) {
 		Session s = cu.getSession();
 		Criteria c = s.createCriteria(User.class);
@@ -49,18 +60,5 @@ public class UserDaoImpl implements UserDao {
 		log.info("get user by id "+ user.toString());
 	    return user;
 	}
-
-
-	@Override
-	public User loginUser(String username, String password) {
-		Session s = cu.getSession();
-		Query q = s.createQuery("select id, username from User where username=:username and password=:password");
-		q.setString("username", username);
-		q.setString("password", password);
-		User user = (User) q.list();
-		return user;
-	}
-	
-	
 
 }
