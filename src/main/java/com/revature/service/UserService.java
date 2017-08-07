@@ -11,8 +11,10 @@ public class UserService {
 	@Autowired
 	UserDaoImpl VD;
 	
-	public User getUserById(int id){
-		return VD.getUserById(id);
+
+	public User getUser(String username, String password) {
+		return VD.loginUser(username, password));
 	}
+	
 
 }

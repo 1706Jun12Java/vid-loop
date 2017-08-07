@@ -5,6 +5,5 @@ import com.revature.domain.*;
 public interface UserDao {
 
 	public void persistUser(User user);
-	public User getUserById(int id);
-	public User getUserByName(String username);
+	public User loginUser(String username, String password);
 }

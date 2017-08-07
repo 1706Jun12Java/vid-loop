@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -34,7 +36,7 @@ public class UserDaoImpl implements UserDao {
 
 	}
 
-	@Override
+	
 	public User getUserById(int id) {
 		Session s = cu.getSession();
 		Criteria c = s.createCriteria(User.class);
@@ -47,12 +49,18 @@ public class UserDaoImpl implements UserDao {
 		log.info("get user by id "+ user.toString());
 	    return user;
 	}
+
+
 	@Override
-	public User getUserByName(String username) {
+	public User loginUser(String username, String password) {
 		Session s = cu.getSession();
-		User user = (User) s.get(User.class, username);
-		s.close();
+		Query q = s.createQuery("select id, username from User where username=:username and password=:password");
+		q.setString("username", username);
+		q.setString("password", password);
+		User user = (User) q.list();
 		return user;
-}
+	}
+	
+	
 
 }
