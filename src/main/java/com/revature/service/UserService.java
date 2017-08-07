@@ -13,7 +13,7 @@ public class UserService {
 	
 
 	public User getUser(String username, String password) {
-		return VD.loginUser(username, password));
+		return VD.loginUser(username, password);
 	}
 	
 
