@@ -38,6 +38,7 @@ public class Driver {
 //		s3();
 //		getVideos();
 //		getFileExtension();
+		testIncrement();
 		
 	}
 	static void init(){
@@ -102,4 +103,8 @@ public class Driver {
         System.out.println(fileName.substring(fileName.lastIndexOf(".")+1));
     }
 	
+	static void testIncrement() {
+		VideoDao vd = new VideoDaoImpl();
+		vd.incrementCount(1);
+	}
 }

@@ -146,6 +146,14 @@ public class VideoDaoImpl implements VideoDao {
 		q.executeUpdate();
 		s.close();
 	}
+	@Override
+	public void incrementLike(int id) {
+		Session s = cu.getSession();
+		Query q = s.createQuery("update Video set likes=likes+1 where id=:id");
+		q.setInteger("id", id);
+		q.executeUpdate();
+		s.close();
+	}
 
 
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -22,9 +23,11 @@ public class UserController {
 	@Autowired
 	UserService us;
 
-	@RequestMapping(value="/{id}",method=RequestMethod.GET)
-	public ResponseEntity<User> getUserById(@PathVariable("id") int id){
-		return ResponseEntity.ok(us.getUserById(id));
+	
+	
+	@RequestMapping(value="/get",method=RequestMethod.POST)
+	public ResponseEntity<User> getUserById(@RequestParam("username") String username, @RequestParam("password") String password){
+		return ResponseEntity.ok(us.getUser(username,password));
 	}
 }
 	

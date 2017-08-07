@@ -14,4 +14,5 @@ public interface VideoDao {
 	public List<Video> getVideosByUser(int id);
 	public Video saveVideo(File file, int id, String vidName, String tag);
 	public void incrementCount(int id);
+	public void incrementLike(int id);
 }
