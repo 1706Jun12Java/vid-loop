@@ -47,5 +47,12 @@ public class UserDaoImpl implements UserDao {
 		log.info("get user by id "+ user.toString());
 	    return user;
 	}
+	@Override
+	public User getUserByName(String username) {
+		Session s = cu.getSession();
+		User user = (User) s.get(User.class, username);
+		s.close();
+		return user;
+}
 
 }
