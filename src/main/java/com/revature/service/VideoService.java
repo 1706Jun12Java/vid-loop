@@ -29,4 +29,16 @@ public class VideoService {
 	public void incrementCount(int id) {
 		VD.incrementCount(id);
 	}
+	
+	public void incrementLike(int id) {
+		VD.incrementLike(id);
+	}
+	
+	public List<Video> getVideosByName(String name){
+		return VD.getVideosByName(name);
+	}
+	
+	public List<Video> getVideosByTag(String tag){
+		return VD.getVideosByTag(tag);
+	}
 }

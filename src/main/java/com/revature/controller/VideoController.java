@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,8 +49,25 @@ public class VideoController {
 		
 	}
 	@RequestMapping(value="/count", method=RequestMethod.POST)
-	public @ResponseBody String incrementCount(@RequestParam("id") int id) {
+	public ResponseEntity<Void> incrementCount(@RequestParam("id") int id) {
 		VS.incrementCount(id);
-		return "ok";
+		HttpHeaders headers = new HttpHeaders();
+		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+	}
+	@RequestMapping(value="/like", method=RequestMethod.POST)
+	public ResponseEntity<Void> incrementLike(@RequestParam("id") int id) {
+		VS.incrementLike(id);
+		HttpHeaders headers = new HttpHeaders();
+		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+	}
+	
+	@RequestMapping(value="/name/{name}", method=RequestMethod.GET)
+	public @ResponseBody List<Video> getByName(@PathVariable("name") String name){
+		return VS.getVideosByName(name);
+	}
+	
+	@RequestMapping(value="/tag/{tag}", method=RequestMethod.GET)
+	public @ResponseBody List<Video> getByTag(@PathVariable("tag") String tag){
+		return VS.getVideosByTag(tag);
 	}
 }
